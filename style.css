@@ -1,0 +1,183 @@
+*,
+::after,
+::before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100vh;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+  background-color: #b22234;
+}
+.container {
+  max-width: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ########## HEADER ########## */
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 12px 0;
+  color: white;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+header h2 {
+  margin: 4px 0;
+  text-align: center;
+}
+.subject {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.8);
+}
+.dot {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 4px;
+  margin: 0 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* ########## MAIN ########## */
+main {
+  padding: 20px 0 60px;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  background-color: #fcf0f2;
+  overflow-y: auto;
+}
+#play {
+  width: 180px;
+  margin: 20px 0;
+  padding: 12px 20px;
+  border-radius: 4px;
+  color: white;
+  font-size: 18px;
+  text-transform: uppercase;
+  background-color: #c7263a;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+  -webkit-transition: background-color 0.3s;
+  -o-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+#play:hover {
+  background-color: #b22234;
+}
+
+/* ########## NUMBERS ########## */
+#numbers {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 12px 1fr 12px 1fr 12px 1fr 12px 1fr 12px 1fr 12px 1fr;
+  -ms-grid-columns: 1fr 12px 1fr 12px 1fr 12px 1fr 12px 1fr;
+  grid-template: repeat(7, 1fr) / repeat(5, 1fr);
+  grid-gap: 12px;
+  margin: 20px 0;
+  justify-items: center;
+}
+.number {
+  width: 50%;
+  height: 50%;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  background-color: white;
+}
+.ball {
+  width: 50px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ########## DRAWN NUMBERS ########## */
+#drawn-numbers {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  min-height: 71px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  border-bottom: 1px solid #ccc;
+}
+@media only screen and (max-width: 600px) {
+  #drawn-numbers {
+    -ms-grid-rows: auto 16px auto;
+    grid-template: auto auto / repeat(4, 1fr);
+    row-gap: 16px;
+  }
+}
+
+#drawn-numbers > .ball:last-of-type {
+  -ms-grid-column-align: end;
+  justify-self: end;
+}
+
+/* ########## BALL COLORS ########## */
+.blue {
+  background: -o-radial-gradient(#529ff6, #0953a6);
+  background: radial-gradient(#529ff6, #0953a6);
+}
+.orange {
+  background: -o-radial-gradient(#f19662, #d95b14);
+  background: radial-gradient(#f19662, #d95b14);
+}
+.green {
+  background: -o-radial-gradient(#94c687, #5c9c4b);
+  background: radial-gradient(#94c687, #5c9c4b);
+}
+.red {
+  background: -o-radial-gradient(#e9869e, #d93059);
+  background: radial-gradient(#e9869e, #d93059);
+}
